@@ -6,16 +6,22 @@ class Paper{
             friction:3.0,
             density:1.2
         }
-        this.body = Bodies.circle(x, y,radius, options);
-        this.radius = 35;
+        this.x=x;
+        this.y=y;
+        this.r=30;
+        this.body = Bodies.circle(this.x, this.y,this.r, options);
+        
+        //this.radius = 35;
         //this.width = width;
         //this.height = height;
         World.add(world, this.body);
     }
     display(){
       var pos =this.body.position;
-      //circleMode(CENTER);
+      push();
+      translate(pos.x,pos.y);
       fill("green");
-        circle(pos.x, pos.y, this.radius);
+      ellipse(0, 0, this.r,this.r);
+      pop()
       }
 }

@@ -21,7 +21,7 @@ function setup() {
 	world = engine.world;
 
 	ground1 = new Ground(400,660);
-	paper1 = new Paper(100,625,10,{isStatic:false,gravity:3.0});
+	paper1 = new Paper(100,625,10,{isStatic:false});
 	dustbinSide1 = new Dustbin(600,630,200,20);
 	dustbinSide2 = new Dustbin(500,590,20,100);
 	dustbinSide3 =new Dustbin(700,590,20,100);
@@ -47,8 +47,9 @@ function draw() {
 
 function keyPressed(){
 	if (keyDown === UP_ARROW){
-	Matter.Body.applyForce(paper1,paper1.body.position,{x:100,y:100});
-	Matter.Body.setStatic(paper1,false)
+	Matter.Body.applyForce(paper1.body,paper1.body.position,{x:85,y:85});
+
+	//Matter.Body.setStatic(paper1,false)
 	//paper1.velocityY=5;
 	//paper1.velocityY = paper1.velocityY-5;
 	
